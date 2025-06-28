@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.timer-container {
+    background-color: #2a2a2a;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.timer-display {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #ff5e5e;
+    text-shadow: 0 0 10px rgba(255, 94, 94, 0.5);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    background-color: #ff5e5e;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #ff3b3b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 94, 94, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.mode-btn {
+    background-color: #3a3a3a;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+}
+
+.mode-btn.active {
+    background-color: #ff5e5e;
+}
+
+.character {
+    margin-top: 2rem;
+    animation: float 3s ease-in-out infinite;
+    text-align: center;
+}
+
+#character-image {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 94, 94, 0.7));
+    transition: transform 0.3s ease;
+}
+
+#character-image:hover {
+    transform: scale(1.05);
+}
+
+#fortune-message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fortune-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 500px) {
+    .timer-display {
+        font-size: 4rem;
+    }
+    
+    .character img {
+        width: 150px;
+    }
+}

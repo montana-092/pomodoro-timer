@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポモドーロタイマー</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="timer-container">
+            <div class="timer-display">25:00</div>
+            <div class="controls">
+                <button id="startBtn">スタート</button>
+                <button id="resetBtn">リセット</button>
+            </div>
+            <div class="mode-selector">
+                <button class="mode-btn active" data-minutes="25">ポモドーロ</button>
+                <button class="mode-btn" data-minutes="5">短い休憩</button>
+                <button class="mode-btn" data-minutes="15">長い休憩</button>
+            </div>
+        </div>
+        <div class="character">
+            <img src="./images/character.png" alt="ポモドーロくん" id="character-image">
+            <div id="fortune-message"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
